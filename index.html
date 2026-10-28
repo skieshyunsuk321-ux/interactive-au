@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive AU</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <!-- 1. LAYAR LOCK SCREEN (Foto 1) -->
+        <div id="lockscreen" class="screen active">
+            <div class="lock-time" id="lock-time">18:10</div>
+            <div class="lock-date" id="lock-date">Tuesday, 18 June</div>
+            <div class="swipe-up-hint">
+                <span>Pilih & Geser ke atas untuk membuka</span>
+                <div class="swipe-bar"></div>
+            </div>
+        </div>
+
+        <!-- 2. LAYAR PASSCODE PIN (Foto 2) -->
+        <div id="passcode-screen" class="screen">
+            <div class="passcode-header">Enter Passcode</div>
+            <!-- Indikator 5 Titik PIN -->
+            <div class="pin-dots">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="error-msg" id="error-msg"></div>
+            <!-- Keypad Angka -->
+            <div class="keypad">
+                <button class="key" onclick="pressKey('1')">1</button>
+                <button class="key" onclick="pressKey('2')">2<span>ABC</span></button>
+                <button class="key" onclick="pressKey('3')">3<span>DEF</span></button>
+                <button class="key" onclick="pressKey('4')">4<span>GHI</span></button>
+                <button class="key" onclick="pressKey('5')">5<span>JKL</span></button>
+                <button class="key" onclick="pressKey('6')">6<span>MNO</span></button>
+                <button class="key" onclick="pressKey('7')">7<span>PQRS</span></button>
+                <button class="key" onclick="pressKey('8')">8<span>TUV</span></button>
+                <button class="key" onclick="pressKey('9')">9<span>WXYZ</span></button>
+                <button class="key empty"></button>
+                <button class="key" onclick="pressKey('0')">0</button>
+                <button class="key delete" onclick="deleteKey()">⌫</button>
+            </div>
+        </div>
+
+        <!-- 3. LAYAR UTAMA CHAT (Muncul setelah PIN benar) -->
+        <div id="chat-screen" class="screen">
+            <div class="chat-header">
+                <div class="header-top">
+                    <span class="back-btn">&lsaquo;</span>
+                    <span class="video-call-icon">📹</span>
+                </div>
+                <div class="header-profile">
+                    <img src="assets/mingi-wa.jpeg" alt="Profile" class="avatar" id="chat-avatar">
+                    <span class="chat-name">malik ilkom (tmn yovan)</span>
+                </div>
+                <button id="bgm-toggle" class="bgm-btn">🎵 BGM</button>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <!-- Pesan chat masuk otomatis lewat script.js -->
+            </div>
+
+            <div class="choices-container" id="choices-container">
+                <!-- Tombol pilihan cerita -->
+            </div>
+        </div>
+
+    </div>
+
+    <audio id="bgm" loop src="assets/bgm.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
